@@ -1,3 +1,29 @@
 // Place all the styles related to the Games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.container {
+  margin: 30px 200px 30px 200px;
+}
+
+.list-bluecards {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.list-bluecards > li {
+  display: inline;
+  background-color: #91dbe6;
+  color: white;
+  padding: 4%;
+  border-radius: 5px;
+}
+
+.form > form {
+  display: flex;
+  flex-flow: wrap;
+  flex-flow: column;
+  text-align: center;
+}

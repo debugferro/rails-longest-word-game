@@ -35,11 +35,11 @@ class GamesController < ApplicationController
 
   def define_result(dictionary_output, result)
     if dictionary_output['found']
-      result[:message] = 'well done'
+      result[:message] = "Congratulations! #{@user_input} is a valid word!"
     elsif !dictionary_output['found']
-      result[:message] = 'not an english word'
+      result[:message] = "Sorry! #{@user_input} is not an english word!"
     elsif (grid.chars - attempt.chars).count.positive?
-      result[:message] = 'some letters are overused'
+      result[:message] = 'Oops! Some letters are overused.'
     end
     result
   end
@@ -52,7 +52,7 @@ class GamesController < ApplicationController
     if included?(user_input, grid)
       define_result(dictionary_output, result)
     else
-      result[:message] = 'not in the grid'
+      result[:message] = "I'm sorry! #{@user_input} is not in the grid."
     end
     result
   end
